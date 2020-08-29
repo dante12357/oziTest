@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Logout from "./components/Logout";
 import Profile from "./components/Profile";
-import Login from "./components/Login/Login";
+import Login from "./components/Login";
 
 function App() {
 
@@ -22,10 +22,8 @@ function App() {
             })
                 .then((resData) => {
                     console.log(resData);
-                    // alert(data);
                     profileState(resData.data)
                 })
-
         }
 
     }, []);

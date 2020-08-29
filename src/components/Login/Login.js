@@ -12,7 +12,7 @@ const Login = props =>{
     const ReviewSchema = yup.object()
         .shape(
             {
-                email: yup.string().email('Не валидный email')
+                email: yup.string().email('Невалидный email')
                     .required('Введите email'),
                 password: yup.string()
                     .min(4, 'Минимальная длинна 4 символов')
@@ -21,8 +21,8 @@ const Login = props =>{
     return(
         <Formik initialValues={{
             clientId: '1',
-            email: 'user@ozitag.com',
-            password: 'user'
+            email: '',
+            password: ''
         }}
                 validationSchema={ReviewSchema}
                 onSubmit={(values, actions) => {
@@ -50,7 +50,6 @@ const Login = props =>{
                                 return response.json();
                             })
                                 .then((resData) => {
-                                    console.log(resData);
                                     profileState(resData.data)
                                 })
 

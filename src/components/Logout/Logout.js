@@ -14,7 +14,6 @@ const Logout = props => {
             return response.json();
         })
             .then((resData) => {
-                console.log(resData.success);
                 if(resData.success){
                     localStorage.clear();
                     document.location.reload(true);
